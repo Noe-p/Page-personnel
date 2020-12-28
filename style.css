@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+body {
+   background-image: url(assets/img/Wallpaper6.png);
+   color: rgb(230, 230, 230);
+}
+
+img {
+   width: 70px;
+   height: 70px;
+}
+
+h1 {
+   position: absolute;
+   left:50%;
+   transform: translate(-50%,-50%);
+   top:5%;
+   font-family: 'Sansita', sans-serif;
+   height:auto;
+   width: auto;
+   font-weight: bold;
+   font-size: 60px;
+   text-align: center;
+   animation-duration: 2s;
+   animation-name: slideDown_h1;
+}
+h2 {
+   position: absolute;
+   left:50%;
+   top:25%;
+   transform: translate(-50%,-50%);
+   font-family: 'Sanchez', serif;
+   width: auto;
+   height: auto;
+   font-size: 30px;
+   text-align: center;
+   color: rgb(17, 17, 17);
+   animation-duration: 2s;
+   animation-name: slideDown_h2;
+}
+
+.carte {
+   background-color:rgba(255, 255, 255, 0.1);
+   Width: 748px;
+   Height: 414px;
+   box-shadow: 15px 15px 45px rgb(17, 17, 17);
+   border-radius: 25px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   animation-duration: 3s;
+   animation-name: slideCarte;
+}
+
+.logo{
+   position: relative;
+   transform: translate(-50%,-50%);
+   top:65%;
+   left:50%;
+}
+
+.logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active{
+   padding: 10px;
+   margin: 45px;
+}
+
+
+.github:hover, .cv:hover, .mail:hover, .phone:hover {
+   padding: 20px;
+   margin:35px;
+   background-color:rgba(230, 230, 230, 0.3);
+}
+.github, .cv, .mail, .phone{
+   transition: all 0.2s ease-in-out;
+   border: 0.3mm solid rgb(230, 230, 230);
+   border-radius:50%;
+   padding: 15px;
+   margin: 40px;
+   background-color:rgba(230, 230, 230, 0.1);
+   animation-duration: 2s;
+   animation-name: slideLogo;
+}
+
+@keyframes slideDown_h1{
+   from {top:-60px;}
+}
+@keyframes slideDown_h2{
+   from {top:60px;}
+}
+@keyframes slideCarte{
+      0% {background-color:rgba(255, 255, 255, 0);
+      box-shadow:none;
+   }
+}
+@keyframes slideLogo{
+   from {margin:0;}
+}
