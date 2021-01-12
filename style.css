@@ -30,6 +30,10 @@ h1 {
    animation-duration: 2s;
    animation-name: slideDown_h1;
 }
+
+@keyframes slideDown_h1{
+   from {top:-60px;}
+}
 h2 {
    position: absolute;
    left:50%;
@@ -41,6 +45,10 @@ h2 {
    color: rgb(17, 17, 17);
    animation-duration: 2s;
    animation-name: slideDown_h2;
+}
+
+@keyframes slideDown_h2{
+   from {top:60px; opacity: 0;}
 }
 
 .carte {
@@ -57,6 +65,12 @@ h2 {
    animation-name: slideCarte;
 }
 
+@keyframes slideCarte{
+      from {background-color:rgba(255, 255, 255, 0);
+      box-shadow:none;
+      opacity: 0;
+   }
+}
 .logo{
    position: relative;
    transform: translate(-50%,-50%);
@@ -64,6 +78,9 @@ h2 {
    left:50%;
 }
 
+@keyframes slideLogo{
+   from {margin:0; opacity: 0;}
+}
 .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active{
    padding: 10px;
    margin: 45px;
@@ -84,19 +101,4 @@ h2 {
    background-color:rgba(230, 230, 230, 0.1);
    animation-duration: 2s;
    animation-name: slideLogo;
-}
-
-@keyframes slideDown_h1{
-   from {top:-60px;}
-}
-@keyframes slideDown_h2{
-   from {top:60px;}
-}
-@keyframes slideCarte{
-      0% {background-color:rgba(255, 255, 255, 0);
-      box-shadow:none;
-   }
-}
-@keyframes slideLogo{
-   from {margin:0;}
 }
