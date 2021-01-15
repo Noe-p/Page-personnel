@@ -16,89 +16,119 @@ img {
    height: 70px;
 }
 
-h1 {
-   position: absolute;
-   left:50%;
-   transform: translate(-50%,-50%);
-   top:5%;
-   font-family: 'Sansita', sans-serif;
-   height:auto;
-   width: auto;
-   font-weight: bold;
-   font-size: 60px;
-   text-align: center;
-   animation-duration: 2s;
-   animation-name: slideDown_h1;
-}
-
-@keyframes slideDown_h1{
-   from {top:-60px;}
-}
-h2 {
-   position: absolute;
-   left:50%;
-   top:25%;
-   transform: translate(-50%,-50%);
-   font-family: 'Sanchez', serif;
-   font-size: 30px;
-   text-align: center;
-   color: rgb(17, 17, 17);
-   animation-duration: 2s;
-   animation-name: slideDown_h2;
-}
-
-@keyframes slideDown_h2{
-   from {top:60px; opacity: 0;}
-}
-
 .carte {
-   background-color:rgba(255, 255, 255, 0.1);
-   Width: 748px;
-   Height: 414px;
-   box-shadow: 15px 15px 45px rgb(17, 17, 17);
-   border-radius: 25px;
    position: absolute;
-   top: 50%;
+   top:50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   animation-duration: 3s;
+   background-color:rgba(255, 255, 255, 0.1);
+   width:50%;
+   height:60%;
+   box-shadow: 15px 15px 45px rgb(17, 17, 17);
+   border-radius: 25px;
+   animation-duration: 4s;
    animation-name: slideCarte;
 }
 
 @keyframes slideCarte{
-      from {background-color:rgba(255, 255, 255, 0);
+      from {
+      background-color:rgba(255, 255, 255, 0);
       box-shadow:none;
-      opacity: 0;
    }
 }
-.logo{
+
+h1 {
+   font-family: 'Sansita', sans-serif;
+   font-weight: bold;
+   font-size: 60px;
+   text-align: center;
+   animation-duration: 3s;
+   animation-name: slideDown_h1;
    position: relative;
-   transform: translate(-50%,-50%);
-   top:65%;
-   left:50%;
+   top: 0;
+}
+
+@keyframes slideDown_h1{
+   from {
+      top:-25%;
+      opacity :0;
+      transform:rotateX(-90deg);
+   }
+}
+h2 {
+   font-family: 'Sanchez', serif;
+   font-size: 30px;
+   text-align: center;
+   color: rgb(17, 17, 17);
+   animation-duration: 3s;
+   animation-name: slideDown_h2;
+   position: relative;
+   top: 0;
+}
+
+@keyframes slideDown_h2{
+   from {
+      opacity: 0;
+      top:-15%;
+   }
+}
+
+.logo{
+   text-align: center;
+   height:30%;
+   display: flex;
+   align-items: center;
+   justify-content:space-around;
+   margin: 6% 0 6% 0 ;
+   animation-duration: 3s;
+   animation-name: slideLogo;
+   position: relative;
+   top:0;
 }
 
 @keyframes slideLogo{
-   from {margin:0; opacity: 0;}
-}
-.logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active{
-   padding: 10px;
-   margin: 45px;
+   from {
+      top: 10%;
+      opacity: 0;
+   }
 }
 
-
-.github:hover, .cv:hover, .mail:hover, .phone:hover {
-   padding: 20px;
-   margin:35px;
-   background-color:rgba(230, 230, 230, 0.3);
-}
 .github, .cv, .mail, .phone{
    transition: all 0.2s ease-in-out;
    border: 0.3mm solid rgb(230, 230, 230);
    border-radius:50%;
-   padding: 15px;
-   margin: 40px;
+   padding: 2%;
    background-color:rgba(230, 230, 230, 0.1);
-   animation-duration: 2s;
-   animation-name: slideLogo;
+}
+
+.github:hover, .cv:hover, .mail:hover, .phone:hover {
+   padding: 2.5%;
+   margin: -0.5%;
+   background-color:rgba(230, 230, 230, 0.3);
+}
+
+.logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active{
+   padding: 2%;
+   margin: 0;
+}
+
+@media all and (max-device-width:480px){
+   .carte {
+      width:700px;
+      height:400px;
+
+   }
+
+   .github, .cv, .mail, .phone{
+      padding: 3%;
+   }
+
+   .github:hover, .cv:hover, .mail:hover, .phone:hover {
+      padding: 3.5%;
+      margin: -0.5%;
+   }
+
+   .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active{
+      padding: 3%;
+   }
 }
