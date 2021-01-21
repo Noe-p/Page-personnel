@@ -126,17 +126,22 @@ h2 {
 }
 
 @media all and (max-device-width:480px) {
+   img {
+      width: 9vw;
+      height: 9vw;
+   }
+
    .carte {
-      width: 700px;
-      height: 400px;
+      width: 90%;
+      height: 500px;
    }
 
    .github, .cv, .mail, .phone {
-      padding: 3%;
+      padding: 2%;
    }
 
    .github:hover, .cv:hover, .mail:hover, .phone:hover {
-      padding: 3.5%;
+      padding: 2.5%;
       margin: -0.5%;
    }
 
