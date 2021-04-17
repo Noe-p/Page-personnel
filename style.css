@@ -7,30 +7,58 @@
    font-family: 'Sanchez';
    src: url("assets/fonts/Sanchez/Sanchez-Regular.ttf");
 }
-
-body {
-   background-color: rgb(18, 18, 18);
-   color: rgb(230, 230, 230);
+html{
+   padding: 0;
+   margin: 0;
+   scroll-behavior: smooth;
 }
 
-img {
+body {
+   color: rgb(28, 28, 28);
+   background-color: white;
+   margin: 0;
+}
+
+h1 {
+   font-family: 'Sansita', sans-serif;
+   font-weight: bold;
+   font-size: 60px;
+   text-align: center;
+}
+
+h2 {
+   font-family: 'Sanchez', serif;
+   text-align: center;
+   color: #86620b;
+}
+
+
+header{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   margin: 0;
+}
+
+header img {
    width: 5vw;
    height: 5vw;
 }
 
+header p{
+   color: rgb(28, 28, 28);
+   font-family: 'Sanchez', serif;
+   font-size: 0.7em;
+}
 .carte {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   background-color: rgba(255, 255, 255, 0.1);
    width: 50%;
    height: 60%;
    animation-duration: 6s;
    animation-name: slideCarte;
    display: flex;
    flex-direction: column;
-   border: solid 5px rgb(230, 230, 230);
 }
 
 @keyframes slideCarte {
@@ -39,15 +67,11 @@ img {
    }
 }
 
-h1 {
-   font-family: 'Sansita', sans-serif;
-   font-weight: bold;
-   font-size: 60px;
-   text-align: center;
+header h1{
    animation-duration: 5s;
    animation-name: slideDown_h1;
    position: relative;
-   top: 0;
+   top: -30px;
 }
 
 @keyframes slideDown_h1 {
@@ -62,11 +86,8 @@ h1 {
    }
 }
 
-h2 {
-   font-family: 'Sanchez', serif;
+header h2{
    font-size: 30px;
-   text-align: center;
-   color: rgb(134, 98, 11);
    animation-duration: 4s;
    animation-name: slideDown_h2;
    position: relative;
@@ -108,16 +129,15 @@ h2 {
 
 .github, .cv, .mail, .phone {
    transition: all 0.2s ease-in-out;
-   border: 0.3mm solid rgb(230, 230, 230);
+   border: 0.3mm solid rgb(28, 28, 28);
    border-radius: 50%;
    padding: 2%;
-   background-color: rgba(230, 230, 230, 0.1);
+   background-color: white;
 }
 
 .github:hover, .cv:hover, .mail:hover, .phone:hover {
    padding: 2.5%;
    margin: -0.5%;
-   background-color: rgba(230, 230, 230, 0.3);
 }
 
 .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active {
@@ -125,27 +145,150 @@ h2 {
    margin: 0;
 }
 
+article {
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: rgb(28, 28, 28);
+   margin-top: 30px;
+}
+
+article h1{
+   margin: 0;
+}
+article h2{
+   font-size: 35px;
+}
+
+article img{
+   width: 80vw;
+   transition: all 0.2s;
+   border-radius: 5px;
+}
+
+article img:hover{
+   box-shadow: 2px 2px 10px rgb(18, 18, 18);
+}
+
+article div{
+   margin-top: 100px;
+}
+
+footer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 50px;
+   height: 250px;
+}
+
+footer img{
+   width: 25px;
+   padding: 7px 11px 7px 11px;
+   border-radius: 50%;
+}
+
+footer img:hover{
+   animation-name: flecheTop;
+   animation-duration: 0.2s;
+   border: solid 0.5px rgb(28, 28, 28);
+}
+
+@keyframes flecheTop {
+   0% {
+      padding: 0;
+      border: solid 0.5px white;
+   }
+
+   100% {
+      padding: 7px 11px 7px 11px;
+      border: solid 0.5px rgb(28, 28, 28);
+   }
+}
+
 @media all and (max-device-width:480px) {
-   img {
-      width: 9vw;
-      height: 9vw;
+   body{
+      color: rgb(227, 223, 212);
+      background-color: rgb(28, 28, 28);
+   }
+
+   header p, article h1{
+      color: rgb(227, 223, 212);
+   }
+   h1{
+      font-size:140px;
+   }
+
+   header h2, article h2{
+      font-size: 70px;
+   }
+
+   header{
+      align-items: baseline;
+   }
+
+   header h1{
+      margin-top: 170px;
+   }
+   header img {
+      width: 15vw;
+      height: 15vw;
+   }
+
+   article img{
+      width: 97vw;
+   }
+
+   article img:hover{
+      box-shadow: none;
    }
 
    .carte {
       width: 90%;
-      height: 500px;
    }
 
+   .logo{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 100px;
+      grid-gap: 70px;
+      width: 100%
+   }
    .github, .cv, .mail, .phone {
-      padding: 2%;
+      padding: 0;
+      border-radius: 0;
+      padding: 50px;
+      border-radius: 50%;
+      box-shadow: 7px 7px 50px black;
+      width: 60%;
+      border:none;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color:rgba(250, 250, 250, 0.7);
    }
 
    .github:hover, .cv:hover, .mail:hover, .phone:hover {
-      padding: 2.5%;
-      margin: -0.5%;
+      padding: 10px;
+      margin: 0;
    }
 
    .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active {
-      padding: 3%;
+      padding: 0;
    }
+
+   footer{
+      margin-top: 200px;
+      margin-bottom: 50px;
+   }
+   footer img{
+      width: 60px;
+   }
+
+   footer img:hover{
+      animation: none;
+      border:none;
+   }
+
 }
