@@ -19,6 +19,13 @@ body {
    margin: 0;
 }
 
+a, a:visited{
+   color: rgb(28, 28, 28);
+   font-family: 'Sanchez', serif;
+   font-size: 30px;
+   text-decoration: none;
+}
+
 h1 {
    font-family: 'Sansita', sans-serif;
    font-weight: bold;
@@ -32,19 +39,126 @@ h2 {
    color: #86620b;
 }
 
+/*Navbar*/
 
-header{
+aside{
+   z-index: 5;
+   position: fixed;
+   height: 10vh;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color:rgba(255, 255, 255, 0);
+   transition: all 0.2s;
+}
+
+.navbar.open{
+   background-color:rgba(255, 255, 255, 1);
+}
+
+.noe{
+   margin-left: 50px;
+   opacity: 0;
+   display: none;
+}
+
+.about{
+   display: flex;
+   width: 400px;
+   justify-content: center;
+   display: none;
+   opacity: 0;
+}
+
+.noe.open, .about.open{
+   opacity: 1;
+   display: flex;
+}
+
+.about a{
+   margin-left: 50px;
+   margin-right: 50px;
+}
+
+aside a::after{
+   display: block;
+   content: '';
+   height: 2px;
+   background-color: #86620b;
+}
+
+aside a::before{
+   display: block;
+   content: '';
+   background-color: white;
+   height: 5px;
+   transform: translate(0,43px);
+   position: relative;
+   width: 100%;
+   transition: all 0.3s;
+}
+
+aside a:hover::before{
+   transform: translate(-100%,43px);
+}
+
+.menu{
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 100%;
+   flex-direction: column;
+   transition: all 0.2s;
+
+}
+
+.menu:hover{
+   cursor: pointer;
+}
+
+.menu img{
+   width: 40px;
+   margin:5px;
+   transition: all 0.2s;
+   transform: rotate(0);
+}
+
+.menu::before{
+   display: block;
+   content: '';
+   position: absolute;
+   width: 45px;
+   height: 25px;
+}
+
+.menu.open img{
+   cursor: pointer;
+   position: absolute;
+}
+
+.menu.open img:first-child{
+   transform: rotate(135deg);
+}
+
+.menu.open img:last-child{
+   transform: rotate(45deg);
+}
+
+/*Intro*/
+header{
    height: 100vh;
-   margin: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 header img {
-   width: 5vw;
-   height: 5vw;
+   width: 80px;
+   height: 80px;
 }
 
 header p{
@@ -52,38 +166,26 @@ header p{
    font-family: 'Sanchez', serif;
    font-size: 0.7em;
 }
-.carte {
-   width: 50%;
-   height: 60%;
-   animation-duration: 6s;
-   animation-name: slideCarte;
-   display: flex;
-   flex-direction: column;
-}
 
-@keyframes slideCarte {
-   from {
-      background-color: rgba(255, 255, 255, 0);
-   }
-}
 
 header h1{
+   color: rgb(28, 28, 28);
    animation-duration: 5s;
    animation-name: slideDown_h1;
    position: relative;
-   top: -30px;
+  top: -30px;
 }
 
 @keyframes slideDown_h1 {
    0% {
-      top: -35%;
-      opacity: 0;
-      transform: rotateX(-90deg);
-   }
+     top: -35%;
+     opacity: 0;
+     transform: rotateX(-90deg);
+  }
 
-   10% {
-      opacity: 0;
-   }
+  10% {
+     opacity: 0;
+  }
 }
 
 header h2{
@@ -101,19 +203,15 @@ header h2{
    }
 }
 
-.logo {
-   text-align: center;
-   height: 30%;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   margin: 6% 0 6% 0;
+.buttons {
    animation-duration: 3s;
    animation-name: slideLogo;
    animation-delay: 1s;
    animation-fill-mode: backwards;
-   position: relative;
-   top: -5%;
+   width: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
 }
 
 @keyframes slideLogo {
@@ -128,23 +226,33 @@ header h2{
 }
 
 .github, .cv, .mail, .phone {
-   transition: all 0.2s ease-in-out;
-   border: 0.3mm solid rgb(28, 28, 28);
+   transition: all 0.2s;
+   border: 0.3mm solid white;
    border-radius: 50%;
-   padding: 2%;
+   padding: 0;
+   margin:20px;
    background-color: white;
 }
 
 .github:hover, .cv:hover, .mail:hover, .phone:hover {
-   padding: 2.5%;
-   margin: -0.5%;
+   padding: 20px;
+   margin: 0;
+   border: 0.3mm solid rgb(28, 28, 28);
 }
+
 
 .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active {
-   padding: 2%;
-   margin: 0;
+   padding: 10px;
+   margin: 10px;
 }
 
+/*INFORMATIONS*/
+.info{
+   width: 70vw;
+   font-size: 20px;
+}
+
+/*PROJETS*/
 article {
    flex-direction: column;
    display: flex;
@@ -172,7 +280,7 @@ article img:hover{
 }
 
 article div{
-   margin-top: 100px;
+   margin-top: 60px;
 }
 
 footer{
@@ -185,7 +293,7 @@ footer{
 
 footer img{
    width: 25px;
-   padding: 7px 11px 7px 11px;
+   padding: 20px 24px 20px 24px;
    border-radius: 50%;
 }
 
@@ -202,7 +310,7 @@ footer img:hover{
    }
 
    100% {
-      padding: 7px 11px 7px 11px;
+      padding: 20px 24px 20px 24px;
       border: solid 0.5px rgb(28, 28, 28);
    }
 }
@@ -229,11 +337,16 @@ footer img:hover{
    }
 
    header h1{
+      color: rgb(227, 223, 212);
       margin-top: 170px;
    }
    header img {
       width: 15vw;
       height: 15vw;
+   }
+
+   article{
+      margin-top:0;
    }
 
    article img{
@@ -270,12 +383,13 @@ footer img:hover{
    }
 
    .github:hover, .cv:hover, .mail:hover, .phone:hover {
-      padding: 10px;
+      padding: 50px;
       margin: 0;
    }
 
    .logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active {
-      padding: 0;
+      padding: 50px;
+      margin: 0;
    }
 
    footer{
