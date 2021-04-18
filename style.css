@@ -135,7 +135,7 @@ aside a:hover::before{
 .menu img{
    width: 40px;
    margin:5px;
-   transition: all 0.2s;
+   transition: all 0.3s;
    transform: rotate(0);
 }
 
@@ -150,6 +150,15 @@ aside a:hover::before{
 .menu.open img{
    cursor: pointer;
    position: absolute;
+   transition: all 0.3s;
+}
+
+.menu.open:hover img:first-child{
+   transform: rotate(-45deg);
+}
+
+.menu.open:hover img:last-child{
+   transform: rotate(-135deg);
 }
 
 .menu.open img:first-child{
@@ -179,7 +188,7 @@ header img {
 header p{
    color: rgb(28, 28, 28);
    font-family: 'Sanchez', serif;
-   font-size: 0.7em;
+   font-size: 20px;
 }
 
 
@@ -404,12 +413,16 @@ footer img:hover{
 }
 
 @media all and (max-device-width:480px) {
-
-
-   aside a {
-      font-size: 55px;
+   aside {
+      height: 50px;
+   }
+   aside a{
+      font-size: 20px;
    }
 
+   aside section{
+      margin-right: 30px;
+   }
    aside a:before, aside a:after{
       display: none;
    }
@@ -417,30 +430,34 @@ footer img:hover{
       display: none;
    }
 
-   header h1{
-      font-size:140px;
-      margin-top: 170px;
-   }
-
-   header h2{
-      font-size: 70px;
-      margin-top: 200px;
+   .navNoe, .navAbout, .navProjects{
+      margin-left:30px;
    }
 
    header{
-      width: 70%;
-
+      width: 90%;
    }
-   header img {
-      width: 15vw;
-      height: 15vw;
+   header h1{
+      top:0px;
+   }
+   header h2{
+      width: 100%;
+      top: -10px;
+   }
+
+   header h2 p{
    }
 
    .buttons{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 70px;
-      width: 100%
+      grid-gap: 10px;;
+      width: 75%;
+   }
+
+   header img{
+      width: 50px;
+      height: 50px;
    }
 
    .github:hover, .cv:hover, .mail:hover, .phone:hover{
@@ -448,67 +465,76 @@ footer img:hover{
       border:none;
    }
 
-
-   #projects{
-      margin-top:180px;
-   }
-
-   #projects h1{
-      font-size: 100px;
-   }
-
-   #projects h2{
-      font-size: 60px;
-   }
-
    #projects img{
-      width: 97vw;
+      width: 95vw;
    }
 
    #projects img:hover{
       box-shadow: none;
    }
 
+   #projects div{
+      margin-top: 10px;
+   }
+
+   #projects h1{
+      font-size: 40px;
+   }
+
+   #projects h2{
+      font-size: 30px;
+   }
 
    #about{
-      width: 95vw;
-   }
-   #about h1{
-      width: 95%;
-      font-size: 90px;
+      margin-top: 50px;
+      width: 92vw;
    }
 
-   #about p, #about a{
-      font-size: 50px;
+   #about h1{
+      font-size: 35px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
    }
+
    #about div{
       display: flex;
       flex-direction: column;
    }
 
    #about div article{
-      padding: 0;
+      padding: 15px;
+   }
+
+   #about p, #about a{
+
+      width: 100%;
    }
 
    .studies img{
       opacity: 1;
       position:inherit;
-      width: 70vw;
    }
 
-   .studies.open img{
+   #about img{
       animation: none;
+      width: 300px;
+   }
+   .passion{
+      margin-top: 30px;
    }
 
    .passion img{
       display: none;
    }
+
    footer{
-      margin-top: 200px;
+      height: auto;
       margin-bottom: 50px;
    }
+
    footer img{
-      width: 60px;
+
    }
 
    footer img:hover{
