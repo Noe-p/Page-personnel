@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
    <meta charset="utf-8">
@@ -7,18 +7,22 @@
    <title>Noé PHILIPPE</title>
 </head>
 
-<aside class="navbar">
-   <div class="noe">
-      <a href="index.html">Noé</a>
+<aside class="navbar open">
+   <div class="navNoe open underlign">
+      <a href="#top">Noé</a>
    </div>
-   <div class="menu">
+   <div class="menu open">
       <img class="menu1" src="assets/img/menu.png" alt='menu'>
       <img class="menu2" src="assets/img/menu.png" alt='menu'>
    </div>
-   <div class="about">
-      <a href="#projets">Projects</a>
-      <a href="about.html">About</a>
-   </div>
+   <section>
+      <div class="navProjects open">
+         <a href="#projects">Projects</a>
+      </div>
+      <div class="navAbout open">
+         <a href="#about">About</a>
+      </div>
+   </section>
 </aside>
 
 <body>
@@ -28,43 +32,79 @@
       <div class="buttons">
          <button class="github">
             <a target='blank' href="https://github.com/Noe-p">
-               <img src="assets/img/github.png">
+               <img src="assets/img/github.png" alt="github">
             </a>
          </button>
          <button class="mail">
             <a href="mailto:noephilippe29@gmail.com">
-               <img src="assets/img/lettre.png">
+               <img src="assets/img/lettre.png" alt="mail">
             </a>
          </button>
          <button class="phone">
             <a href="tel:0781533181">
-               <img src="assets/img/telephone.png">
+               <img src="assets/img/telephone.png" alt="phone">
             </a>
          </button>
          <button class="cv">
-            <a target='blank' href="assets/CV.pdf">
+            <a target='blank' href="assets/CV.pdf" alt="CV">
                <img src="assets/img/cv.png">
             </a>
          </button>
       </div>
    </header>
 
-   <article id="projets">
-      <h1>Projects :</h1>
+   <article id="projects">
+      <h1>Some projects...</h1>
       <div>
          <h2>Batz</h2>
          <a target='blank' href="https://location-maison-iledebatz.fr/"><img src="assets/img/batz.png" alt='Batz'></a>
       </div>
       <div>
          <h2>Focus</h2>
-         <a target='blank' href="https://github.com/Noe-p/Developpement-application-web"><img src="assets/img/focus.png" alt='Batz'></a>
+         <a target='blank' href="https://github.com/Noe-p/Developpement-application-web"><img src="assets/img/focus.png" alt='Focus'></a>
+      </div>
+      <div>
+         <h2>Space Invaders</h2>
+         <a target='blank' href="https://github.com/Noe-p/Space-Invaders"><img src="assets/img/spaceInvaders.png" alt='spaceInvaders'></a>
       </div>
    </article>
+
+   <article id="about">
+      <h1>I'm futur apprentice at <span>Sorbonne University</span> in Paris,</h1>
+
+      <div class="studies">
+         <article>
+            <p>I'm 22, I love to <span>design</span> and <span>develop</span> website with
+               animations and clean interfaces. What I find very interesting is to imagine, create and
+               apply ideas who's in my mind. Like art, of a sort.
+            </p>
+            <p>
+               I'm Currently studying in the second year of the computer Science Bachelor's
+               Degree course in Brest. This university education gave me <span>solid knowledge</span> in development.</br></br>
+            </p>
+         </article>
+         <img src="assets/img/noe.png" alt="imgNoe">
+      </div>
+
+      <div class="passion">
+         <img src="assets/img/guitar.jpg" alt="imgGuitar">
+         <article>
+            <p>
+               I like to <span>draw up projects</span> with a team, exchange and communicate ideas.
+               Precisely, I play guitar in a band "Saad" during my free time. I think that
+               music is very similar to developpement.
+            </p>
+            <p>
+               If you are interesting by my profile, You can contact me at <a href="mailto:noephilippe29@gmail.com">noephilippe29@gmail.com.</a>
+            </p>
+         </article>
+      </div>
+   </article>
+
 
    <footer>
       <a href="#top"><img src="assets/img/flecheTop.png" alt='flecheTop'></a>
    </footer>
-</body>
 
 <script type="text/javascript" src="main.js"></script>
 
