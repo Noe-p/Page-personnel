@@ -282,25 +282,51 @@ header h2{
 #projects h1{
    margin: 0;
 }
+
+#projects div{
+   margin-top: 60px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 #projects h2{
    font-size: 35px;
 }
 
-#projects img{
+#projects a img{
    width: 80vw;
    transition: all 0.2s;
    border-radius: 5px;
    box-shadow: 1px 1px 10px rgb(18, 18, 18);
 }
 
-#projects img:hover{
+#projects a img:hover{
    box-shadow: 2px 2px 20px rgb(18, 18, 18);
 }
 
-#projects div{
-   margin-top: 60px;
+#projects a section{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 110px;
+   left: 50%;
+   transform: translate(-50%,-130%);
+   transition: all 0.5s;
+   z-index: -5;
+   position: absolute;
 }
 
+#projects a section img{
+   border-radius: none;
+   box-shadow: none;
+   width: 35px;
+   margin:5px 10px 0 10px;
+}
+
+#projects a:hover section {
+   transform: translate(-50%,0);
+}
 /*ABOUT*/
 
 #about{
@@ -460,6 +486,11 @@ footer img:hover{
       height: 50px;
    }
 
+   .github, .cv, .mail, .phone {
+      padding: 17px 16px 8px 16px;
+      border: solid 0.3px black;
+   }
+
    .github:hover, .cv:hover, .mail:hover, .phone:hover{
       padding: none;
       border:none;
@@ -483,6 +514,16 @@ footer img:hover{
 
    #projects h2{
       font-size: 30px;
+   }
+
+   #projects a section{
+      transform: translate(-50%,0);
+      position: relative;
+   }
+
+   #projects a section img{
+      width: 15px;
+      margin:0px 5px 0 5px;
    }
 
    #about{
