@@ -23,7 +23,7 @@ body {
 }
 
 a, a:visited{
-   color: rgb(28, 28, 28);
+   color: #1c1c1c;
    font-family: 'Sanchez', serif;
    font-size: 30px;
    text-decoration: none;
@@ -64,12 +64,39 @@ aside{
    box-shadow: 1px 1px 5px black;
 }
 
-.navNoe, .navAbout, .navProjects{
+.navAbout, .navProjects{
    margin-left: 90px;
    opacity: 0;
    display: none;
 }
 
+.navNoe{
+   margin-left: 50px;
+   opacity: 0;
+   display: none;
+}
+
+.navNoe a img:first-child{
+   width: 20px;
+   left: 5px;
+   position: relative;
+   transition: all 0.3s;
+}
+
+.navNoe a img:last-child{
+   position: relative;
+   width: 24px;
+   left:-10px;
+   transition: all 0.3s;
+}
+
+.navNoe a:hover img:first-child{
+   left: 0px;
+}
+
+.navNoe a:hover img:last-child{
+   left: -5px;
+}
 aside section{
    display: flex;
    margin-right: 50px;
@@ -81,16 +108,20 @@ aside section{
    display: flex;
 }
 
-.navAbout a, , .navProjects a{
-   margin-left: 50px;
-   margin-right: 50px;
-}
 
 aside a::after{
    display: block;
    content: '';
    height: 2px;
    background-color: #86620b;
+}
+
+.navNoe a:after{
+   width: 47px;
+}
+
+.navNoe a::before{
+   width: 47px;
 }
 
 aside a::before{
@@ -354,6 +385,10 @@ header h2{
    font-size: 23px;
 }
 
+.contactMe{
+   text-align: center;
+}
+
 #about img{
    width: 450px;
    border-radius: 10px;
@@ -411,7 +446,7 @@ footer{
    align-items: center;
    justify-content: center;
    margin-top: 50px;
-   height: 250px;
+   height: 150px;
 }
 
 footer img{
@@ -438,7 +473,52 @@ footer img:hover{
    }
 }
 
+@media screen and (max-width:1300px) {
+   #about {
+      margin-top: 100px;
+   }
+   #about h1 {
+      width: 85vw;
+   }
+
+   #about div article {
+	   padding:0 20px 0 20px;
+   }
+
+   .passion{
+      margin-top: 30px;
+   }
+
+   .contactMe{
+      text-align: left;
+      padding: 20px;
+   }
+
+   #about div {
+	     flex-direction: column;
+   }
+
+   #about img{
+      margin-top: 30px;
+   }
+
+   .passion img{
+      display: none;
+   }
+   footer{
+      margin-top: 0;
+   }
+}
+
+@media screen and (max-width:785px) {
+   .menu{
+      display: none;
+   }
+}
+
+
 @media all and (max-device-width:480px) {
+
    aside {
       height: 50px;
    }
@@ -458,6 +538,22 @@ footer img:hover{
 
    .navNoe, .navAbout, .navProjects{
       margin-left:30px;
+   }
+   .navNoe a img:first-child {
+      width:12px;
+   }
+
+   .navNoe a img:last-child {
+      width:14px;
+      left: -5px;
+   }
+
+   .navNoe a:hover img:first-child{
+      left: 5px;
+   }
+
+   .navNoe a:hover img:last-child{
+      left: -5px;
    }
 
    header{
@@ -496,7 +592,7 @@ footer img:hover{
       border:none;
    }
 
-   #projects img{
+   #projects a img{
       width: 95vw;
    }
 
@@ -528,7 +624,7 @@ footer img:hover{
 
    #about{
       margin-top: 50px;
-      width: 92vw;
+      width: 95vw;
    }
 
    #about h1{
@@ -544,14 +640,21 @@ footer img:hover{
    }
 
    #about div article{
-      padding: 15px;
+      padding: 10px;
+   }
+
+   .contactMe{
+      text-align: left;
+      padding: 10px;
    }
 
    #about p, #about a{
-
       width: 100%;
    }
-
+   #about p{
+      margin-top:10px;
+      margin-bottom:10px;
+   }
    .studies img{
       opacity: 1;
       position:inherit;
@@ -560,9 +663,10 @@ footer img:hover{
    #about img{
       animation: none;
       width: 300px;
+      margin-bottom: 30px;
    }
    .passion{
-      margin-top: 30px;
+      margin-top: 0;
    }
 
    .passion img{
@@ -572,11 +676,9 @@ footer img:hover{
    footer{
       height: auto;
       margin-bottom: 50px;
+      margin-top: 50px;
    }
 
-   footer img{
-
-   }
 
    footer img:hover{
       animation: none;
