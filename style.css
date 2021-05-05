@@ -208,7 +208,7 @@ header{
    justify-content: center;
    align-items: center;
    border-bottom: solid 1px black;
-   width: 50%;
+   width: 60%;
 }
 
 header img {
@@ -279,7 +279,7 @@ header h2{
    }
 }
 
-.github, .cv, .mail, .phone {
+button {
    transition: all 0.2s;
    border: 0.3mm solid white;
    border-radius: 50%;
@@ -288,16 +288,16 @@ header h2{
    background-color: white;
 }
 
-.github:hover, .cv:hover, .mail:hover, .phone:hover {
+button:hover {
    padding: 20px 21px 14px 21px;
    margin: 6px 7px 0 7px;;
    border: 0.3mm solid rgb(28, 28, 28);
 }
 
 
-.logo .github:active, .logo .cv:active, .logo .phone:active, .logo .mail:active {
-   padding: 10px;
-   margin: 10px;
+button:active {
+   padding: 6px 7px 0 7px;
+   margin:20px 21px 14px 21px;
 }
 
 /*PROJETS*/
@@ -582,12 +582,12 @@ footer img:hover{
       height: 50px;
    }
 
-   .github, .cv, .mail, .phone {
+   button {
       padding: 17px 16px 8px 16px;
       border: solid 0.3px black;
    }
 
-   .github:hover, .cv:hover, .mail:hover, .phone:hover{
+   button:hover{
       padding: none;
       border:none;
    }
