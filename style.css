@@ -355,6 +355,10 @@ button:active {
    margin:5px 10px 0 10px;
 }
 
+#projects a section .framework{
+  margin-left: 60px;
+
+}
 #projects a:hover section {
    transform: translate(-50%,0);
 }
@@ -557,6 +561,8 @@ footer img:hover{
    }
 
    header{
+      margin-top: 50px;
+      padding-bottom: 50px;
       width: 90%;
    }
    header h1{
@@ -573,7 +579,7 @@ footer img:hover{
    .buttons{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 10px;;
+      grid-gap: 10px;
       width: 75%;
    }
 
