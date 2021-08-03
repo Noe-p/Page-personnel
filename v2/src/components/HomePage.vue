@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="../style/main.scss">
+<style lang="scss">
 #projects {
   flex-direction: column;
   display: flex;
@@ -80,6 +80,37 @@ export default {
 
 #projects h1 {
   margin: 0;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 150px;
+}
+
+footer img {
+  width: 25px;
+  padding: 20px 24px;
+  border-radius: 50%;
+}
+
+footer img:hover {
+  animation-name: flecheTop;
+  animation-duration: 0.2s;
+  border: solid 0.5px rgb(28, 28, 28);
+}
+@keyframes flecheTop {
+  0% {
+    padding: 0;
+    border: solid 0.5px white;
+  }
+
+  100% {
+    padding: 20px 24px;
+    border: solid 0.5px rgb(28, 28, 28);
+  }
 }
 
 

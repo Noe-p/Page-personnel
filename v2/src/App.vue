@@ -66,3 +66,7 @@ h2 {
   color: #86620b;
 }
 </style>
+
+<style lang="scss" src="@/style/responsive.scss">
+
+</style>
