@@ -1,46 +1,29 @@
-<template>
+<template  >
 
 <Navbar/>
 
 <Header/>
 
+
+
 <article id="projects">
   <h1>Some projects...</h1>
+  <Selection
+    :editLanguage="editLanguage"
 
-  <Project
-    title="Raconte"
-    img="raconte.png"
-    v-bind:langs="['html', 'css', 'javaScript']"
-    v-bind:framework="[]"
   />
 
-  <Project
-    title="Todo List"
-    img="todoApp.png"
-    v-bind:langs="['html', 'css', 'javaScript']"
-    v-bind:framework="['vue']"
-  />
 
-  <Project
-    title="Batz"
-    img="batz.png"
-    v-bind:langs="['html', 'css', 'javaScript']"
-    v-bind:framework="[]"
-  />
 
-  <Project
-    title="Focus"
-    img="focus.png"
-    v-bind:langs="['html', 'css', 'javaScript', 'php', 'sql']"
-    v-bind:framework="[]"
-  />
+  <div v-for="project in projects" v-bind:key="project">
+    <Project
+      :title="project.title"
+      :img="project.img"
+      v-bind:langs="project.langs"
+      v-bind:framework="project.framework"
+    />
+  </div>
 
-  <Project
-    title="Space Invaders"
-    img="spaceInvaders.png"
-    v-bind:langs="['python']"
-    v-bind:framework="[]"
-  />
 </article>
 
 <About/>
@@ -56,6 +39,15 @@ import Navbar from './Navbar.vue';
 import Header from './Header.vue';
 import About from './About.vue';
 import Project from './Project.vue';
+import Selection from './Selection.vue';
+
+const ressource = [
+  { title: 'Raconte', img: 'raconte.png', langs: ['html', 'css', 'javaScript'], framework: []},
+  { title: 'Todo List', img: 'todoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['vue']},
+  { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: []},
+  { title: 'Focus', img: 'focus.png', langs: ['html', 'css', 'javaScript', 'php', 'sql'], framework: []},
+  { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: []}
+]
 
 export default {
   name: 'HomePage',
@@ -63,9 +55,60 @@ export default {
     Navbar,
     Header,
     About,
-    Project
+    Project,
+    Selection
+  },
+  data: ()=> {
+    return {
+      projects: [],
+      languages: []
+    }
+  },
+  methods: {
+    editLanguage(language){
+      console.log('ok');
+      var flag = -1;
+
+      for(let item in this.languages){
+        if(this.languages[item] == language){
+          flag = item;
+        }
+      }
+      this.projects=[];
+
+      if(flag == -1){
+        this.languages.push(language)
+        document.querySelector('.'+language).classList.add('checked');
+      }
+      else{
+        this.languages.splice(flag,1);
+        document.querySelector('.'+language).classList.remove('checked');
+      }
+      this.addProject();
+    },
+    addProject(){
+      for (let item in this.languages){
+        for(let project in ressource){
+          for (let lang in ressource[project].langs){
+            if(ressource[project].langs[lang]==this.languages[item]){
+              for(let i in this.projects){
+                if(this.projects[i].title==ressource[project].title){
+                  this.projects.splice(i,1);
+                }
+              }
+              this.projects.unshift(ressource[project]);
+            }
+          }
+        }
+      }
+    }
+  },
+  mounted(){
+    this.editLanguage('html');
+    this.editLanguage('javaScript');
   }
 }
+
 </script>
 
 <style lang="scss">
