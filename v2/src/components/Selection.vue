@@ -3,20 +3,21 @@
     <div class="language">
       <h2>Languages</h2>
       <div class="items">
-        <p class="html" @click="editLanguage('html')">HTML5/CSS</p>
-        <p class="javaScript" @click="editLanguage('javaScript')" >JavaScript</p>
-        <p class="sql" @click="editLanguage('sql')" >SQL</p>
-        <p class="php" @click="editLanguage('php')" >PHP</p>
-        <p class="python" @click="editLanguage('python')" >Python</p>
+        <p class="html" @click="editSelection('html')">HTML5/CSS</p>
+        <p class="javaScript" @click="editSelection('javaScript')" >JavaScript</p>
+        <p class="sql" @click="editSelection('sql')" >SQL</p>
+        <p class="php" @click="editSelection('php')" >PHP</p>
+        <p class="python" @click="editSelection('python')" >Python</p>
       </div>
     </div>
     <div class="framework">
       <h2>Frameworks</h2>
       <div class="items">
-        <p>Vue.js</p>
+        <p class="vue" @click="editSelection('vue')">Vue.js</p>
       </div>
     </div>
   </div>
+  <h2 class="noSelection">Sorry, neither project matches to your selection</h2>
 
 </template>
 
@@ -24,7 +25,7 @@
   export default{
     name: 'Selection',
     props: {
-      editLanguage: Function,
+      editSelection: Function,
     }
   }
 
@@ -53,10 +54,11 @@
     .items{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 10%;
+      grid-column-gap: 20%;
       margin:10px;
 
       p{
+        position: relative;
         display: flex;
         margin: 10px;
       }
@@ -75,23 +77,39 @@
         border: solid 1px black;
         background-color: white;
         border-radius: 50%;
-        margin-right: 10px;
         color: white;
-
+        position: absolute;
+        left:-25px;
+        top: 50%;
+        transform: translate(-50%,-50%);
         transition: all 0.2s;
-        transition-delay: 0.1s;
       }
 
       p:hover::before{
         background-color: teal;
-        border: solid 1px white;
+      }
+
+      p:active::before{
+        width: 25px;
+        height: 25px;
       }
 
       p.checked::before{
         background-color: teal;
-        border: solid 1px white;
       }
+
+
     }
+  }
+
+  .noSelection{
+    position: absolute;
+    margin-top: 40%;
+    opacity: 0;
+  }
+
+  .noSelection.visible{
+    opacity: 1;
   }
 
 

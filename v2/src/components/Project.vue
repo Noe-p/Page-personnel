@@ -1,18 +1,20 @@
 <template>
-  <div class="project-item">
-    <h2>{{ title }}</h2>
-    <a target='blank' href="https://raconte-reportage.com/index.html">
-      <img :src="require(`@/assets/img/${img}`)" :alt='[[ title ]]'>
-      <section  class="languages">
-        <div v-for="lang in langs" v-bind:key="lang">
-          <img :src="require(`@/assets/logo/${lang}.png`)" :alt='[[ lang ]]'>
-        </div>
-        <div v-for="item in framework" v-bind:key="item">
-          <img class="framework" :src="require(`@/assets/logo/${item}.png`)" :alt='[[ item ]]'>
-        </div>
-    </section>
-    </a>
-  </div>
+  <transition name="fade">
+    <div class="project-item">
+      <h2>{{ title }}</h2>
+      <a target='blank' :href="[[ url ]]">
+        <img :src="require(`@/assets/img/${img}`)" :alt='[[ title ]]'>
+        <section  class="languages">
+          <div v-for="lang in langs" v-bind:key="lang">
+            <img :src="require(`@/assets/logo/${lang}.png`)" :alt='[[ lang ]]'>
+          </div>
+          <div v-for="item in framework" v-bind:key="item">
+            <img class="framework" :src="require(`@/assets/logo/${item}.png`)" :alt='[[ item ]]'>
+          </div>
+      </section>
+      </a>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -21,6 +23,7 @@
     props: {
       title: String,
       img: String,
+      url: String,
       langs: Array,
       framework: Array
     }
@@ -29,7 +32,12 @@
 </script>
 
 <style media="screen">
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .project-item {
   margin-top: 60px;
   display: flex;

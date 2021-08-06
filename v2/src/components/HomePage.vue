@@ -9,20 +9,20 @@
 <article id="projects">
   <h1>Some projects...</h1>
   <Selection
-    :editLanguage="editLanguage"
+    :editSelection="editSelection"
 
   />
-
-
 
   <div v-for="project in projects" v-bind:key="project">
     <Project
       :title="project.title"
       :img="project.img"
+      :url="project.url"
       v-bind:langs="project.langs"
       v-bind:framework="project.framework"
     />
   </div>
+
 
 </article>
 
@@ -42,11 +42,11 @@ import Project from './Project.vue';
 import Selection from './Selection.vue';
 
 const ressource = [
-  { title: 'Raconte', img: 'raconte.png', langs: ['html', 'css', 'javaScript'], framework: []},
-  { title: 'Todo List', img: 'todoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['vue']},
-  { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: []},
-  { title: 'Focus', img: 'focus.png', langs: ['html', 'css', 'javaScript', 'php', 'sql'], framework: []},
-  { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: []}
+  { title: 'Raconte', img: 'raconte.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://raconte-reportage.com/index.html'},
+  { title: 'Todo List', img: 'todoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['vue'], url: 'https://github.com/Noe-p/todo-list'},
+  { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://location-maison-iledebatz.fr/'},
+  { title: 'Focus', img: 'focus.png', langs: ['html', 'css', 'javaScript', 'php', 'sql'], framework: [], url: 'https://github.com/Noe-p/Developpement-application-web'},
+  { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: [], url: 'https://github.com/Noe-p/Space-Invaders'}
 ]
 
 export default {
@@ -61,57 +61,70 @@ export default {
   data: ()=> {
     return {
       projects: [],
-      languages: []
+      selection: []
     }
   },
   methods: {
-    editLanguage(language){
-      console.log('ok');
+    editSelection(language){
       var flag = -1;
+      this.projects=[];
 
-      for(let item in this.languages){
-        if(this.languages[item] == language){
+      for(let item in this.selection){
+        if(this.selection[item] == language){
           flag = item;
         }
       }
-      this.projects=[];
 
       if(flag == -1){
-        this.languages.push(language)
+        this.selection.push(language)
         document.querySelector('.'+language).classList.add('checked');
       }
       else{
-        this.languages.splice(flag,1);
+        this.selection.splice(flag,1);
         document.querySelector('.'+language).classList.remove('checked');
       }
+
       this.addProject();
+      if(this.projects.length == 0){
+        document.querySelector('.noSelection').classList.add('visible');
+      }
+      else{
+        document.querySelector('.noSelection').classList.remove('visible');
+      }
     },
     addProject(){
-      for (let item in this.languages){
-        for(let project in ressource){
-          for (let lang in ressource[project].langs){
-            if(ressource[project].langs[lang]==this.languages[item]){
-              for(let i in this.projects){
-                if(this.projects[i].title==ressource[project].title){
-                  this.projects.splice(i,1);
-                }
-              }
-              this.projects.unshift(ressource[project]);
+      let flag;
+      for(let project in ressource){
+        flag = 0;
+        for(let lang in this.selection){
+          for(let item in ressource[project].langs){
+            if(ressource[project].langs[item]==this.selection[lang]){
+              flag = flag + 1;
+            }
+          }
+          for(let framework in ressource[project].framework){
+            if(ressource[project].framework[framework]==this.selection[lang]){
+              flag = flag + 1;
             }
           }
         }
+        if(flag == this.selection.length){
+          this.projects.unshift(ressource[project]);
+        }
       }
+
+
     }
   },
   mounted(){
-    this.editLanguage('html');
-    this.editLanguage('javaScript');
+    this.addProject();
   }
 }
 
 </script>
 
 <style lang="scss">
+
 #projects {
   flex-direction: column;
   display: flex;
