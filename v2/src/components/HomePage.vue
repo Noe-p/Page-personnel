@@ -10,7 +10,6 @@
   <h1>Some projects...</h1>
   <Selection
     :editSelection="editSelection"
-
   />
 
   <div v-for="project in projects" v-bind:key="project">
@@ -166,6 +165,28 @@ footer img:hover {
   100% {
     padding: 20px 24px;
     border: solid 0.5px rgb(28, 28, 28);
+  }
+}
+
+@media screen and (max-width:1300px) {
+  footer {
+    margin-top: 0;
+  }
+}
+
+@media all and (max-device-width:480px) {
+  #projects h1{
+    margin-bottom: 25px;
+  }
+  footer {
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  footer img:hover {
+    animation: none;
+    border: none;
   }
 }
 

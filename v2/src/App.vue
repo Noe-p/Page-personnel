@@ -13,6 +13,7 @@ export default {
 }
 </script>
 
+
 <style lang="scss">
 #app {
     display: flex;
@@ -21,6 +22,8 @@ export default {
     justify-content: center;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+    
 }
 
 html {
@@ -65,8 +68,4 @@ h2 {
   text-align: center;
   color: #86620b;
 }
-</style>
-
-<style lang="scss" src="@/style/responsive.scss">
-
 </style>

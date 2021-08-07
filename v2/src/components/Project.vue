@@ -1,5 +1,4 @@
 <template>
-  <transition name="fade">
     <div class="project-item">
       <h2>{{ title }}</h2>
       <a target='blank' :href="[[ url ]]">
@@ -14,7 +13,6 @@
       </section>
       </a>
     </div>
-  </transition>
 </template>
 
 <script>
@@ -32,12 +30,7 @@
 </script>
 
 <style media="screen">
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+
 .project-item {
   margin-top: 60px;
   display: flex;
@@ -85,6 +78,39 @@
 
 #projects a:hover section {
   transform: translate(-50%,0);
+}
+
+@media all and (max-device-width:480px) {
+  #projects a img {
+    width: 95vw;
+  }
+
+  #projects img:hover {
+    box-shadow: none;
+  }
+
+  #projects div {
+    margin-top: 0px;
+  }
+
+  #projects h1 {
+    font-size: 40px;
+  }
+
+  #projects h2 {
+    font-size: 30px;
+  }
+
+  #projects a section {
+    transform: translate(-50%,0);
+    position: relative;
+  }
+
+  #projects a section img {
+    width: 20px;
+    margin: 0 5px;
+  }
+
 }
 
 </style>

@@ -41,6 +41,7 @@
     font-size:1.5em;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 
     h2{
       color: black;
@@ -105,11 +106,27 @@
   .noSelection{
     position: absolute;
     margin-top: 40%;
-    opacity: 0;
+    display: none;
   }
 
   .noSelection.visible{
-    opacity: 1;
+    display: block;
+  }
+
+  @media all and (max-device-width:480px) {
+    .selection{
+      font-size: 5vw;
+      margin-bottom:25px;
+      .items{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .noSelection{
+      position: relative;
+      margin-top: 0;
+      display: none;
+    }
   }
 
 

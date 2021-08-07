@@ -189,4 +189,48 @@ aside a:hover::before {
   transform: rotate(45deg);
 }
 
+@media screen and (max-width:785px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media all and (max-device-width:480px) {
+  aside {
+    height: 50px;
+  }
+
+  aside a {
+    font-size: 20px;
+  }
+
+  aside section {
+    margin-right: 30px;
+  }
+
+  aside a:after,
+  aside a:before {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .navAbout,
+  .navNoe,
+  .navProjects {
+    margin-left: 30px;
+  }
+
+  .navNoe a img:first-child {
+    width: 12px;
+  }
+
+  .navNoe a img:last-child {
+    width: 14px;
+  }
+
+
+}
 </style>

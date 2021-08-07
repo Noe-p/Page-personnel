@@ -137,4 +137,46 @@ button:active {
   margin: 20px 21px 14px;
 }
 
+@media all and (max-device-width:480px) {
+  header {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    width: 90%;
+  }
+
+  header h1 {
+    top: 0;
+  }
+
+  header h2 {
+    width: 100%;
+    top: -10px;
+  }
+
+  header h2 p {}
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 75%;
+  }
+
+  header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  button {
+    padding: 17px 16px 8px;
+    border: solid 0.3px black;
+  }
+
+  button:hover {
+    padding: none;
+    border: none;
+  }
+
+}
+
 </style>

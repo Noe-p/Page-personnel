@@ -126,4 +126,100 @@
 .passion {
   margin-top: 70px;
 }
+
+@media screen and (max-width:1300px) {
+  #about {
+    margin-top: 100px;
+  }
+
+  #about h1 {
+    width: 85vw;
+  }
+
+  #about div article {
+    padding: 0 20px;
+  }
+
+  .passion {
+    margin-top: 30px;
+  }
+
+  .contactMe {
+    text-align: left;
+    padding: 20px;
+  }
+
+  #about div {
+    flex-direction: column;
+  }
+
+  #about img {
+    margin-top: 30px;
+  }
+
+  .passion img {
+    display: none;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+}
+@media all and (max-device-width:480px) {
+  #about {
+    margin-top: 50px;
+    width: 95vw;
+  }
+
+  #about h1 {
+    font-size: 35px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #about div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #about div article {
+    padding: 10px;
+  }
+
+  .contactMe {
+    text-align: left;
+    padding: 10px;
+  }
+
+  #about a,
+  #about p {
+    width: 100%;
+  }
+
+  #about p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .studies img {
+    opacity: 1;
+    position: inherit;
+  }
+
+  #about img {
+    animation: none;
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .passion {
+    margin-top: 0;
+  }
+
+  .passion img {
+    display: none;
+  }
+
+}
 </style>
