@@ -1,8 +1,8 @@
 <template>
-  <div class="selection">
+  <div  class="selection">
     <div class="language">
       <h2>Languages</h2>
-      <div class="items">
+      <div  class="items">
         <p class="html" @click="editSelection('html')">HTML5/CSS</p>
         <p class="javaScript" @click="editSelection('javaScript')" >JavaScript</p>
         <p class="sql" @click="editSelection('sql')" >SQL</p>
@@ -13,11 +13,13 @@
     <div class="framework">
       <h2>Frameworks</h2>
       <div class="items">
+        <p class="angular" @click="editSelection('angular')">Angular</p>
         <p class="vue" @click="editSelection('vue')">Vue.js</p>
       </div>
     </div>
   </div>
-  <h2 class="noSelection">Sorry, neither project matches to your selection</h2>
+
+  <h3 class="noSelection">Sorry, neither project matches to your selection</h3>
 
 </template>
 
@@ -62,6 +64,7 @@
         position: relative;
         display: flex;
         margin: 10px;
+        width: 10vw;
       }
 
       p:hover{
@@ -98,8 +101,6 @@
       p.checked::before{
         background-color: teal;
       }
-
-
     }
   }
 
@@ -107,6 +108,7 @@
     position: absolute;
     margin-top: 40%;
     display: none;
+    font-size: 30px;
   }
 
   .noSelection.visible{
@@ -117,8 +119,21 @@
     .selection{
       font-size: 5vw;
       margin-bottom:25px;
+
       .items{
         grid-template-columns: repeat(2, 1fr);
+
+        p{
+          width: 30vw;
+        }
+
+        p:hover::before{
+          background-color: white;
+        }
+
+        p.checked:hover::before{
+          background-color: teal;
+        }
       }
     }
 
@@ -126,7 +141,11 @@
       position: relative;
       margin-top: 0;
       display: none;
+      font-size: 18px;
+      width: 80%;
     }
+
+
   }
 
 

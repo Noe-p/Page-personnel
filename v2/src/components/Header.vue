@@ -153,8 +153,6 @@ button:active {
     top: -10px;
   }
 
-  header h2 p {}
-
   .buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

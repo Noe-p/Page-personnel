@@ -23,7 +23,7 @@ export default {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    
+
 }
 
 html {
@@ -63,7 +63,7 @@ h1 {
   text-align: center;
 }
 
-h2 {
+h2, h3 {
   font-family: 'Sanchez', serif;
   text-align: center;
   color: #86620b;

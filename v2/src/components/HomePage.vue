@@ -19,8 +19,10 @@
       :url="project.url"
       v-bind:langs="project.langs"
       v-bind:framework="project.framework"
+      :projectsLength="projects.length"
     />
   </div>
+
 
 
 </article>
@@ -41,11 +43,12 @@ import Project from './Project.vue';
 import Selection from './Selection.vue';
 
 const ressource = [
-  { title: 'Raconte', img: 'raconte.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://raconte-reportage.com/index.html'},
-  { title: 'Todo List', img: 'todoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['vue'], url: 'https://github.com/Noe-p/todo-list'},
-  { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://location-maison-iledebatz.fr/'},
   { title: 'Focus', img: 'focus.png', langs: ['html', 'css', 'javaScript', 'php', 'sql'], framework: [], url: 'https://github.com/Noe-p/Developpement-application-web'},
-  { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: [], url: 'https://github.com/Noe-p/Space-Invaders'}
+  { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: [], url: 'https://github.com/Noe-p/Space-Invaders'},
+  { title: 'Angular Todo App', img: 'angularTodoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['angular'], url: 'https://github.com/Noe-p/angular-todo-app'},
+  { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://location-maison-iledebatz.fr/'},
+  { title: 'Todo List', img: 'todoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['vue'], url: 'https://github.com/Noe-p/todo-list'},
+  { title: 'Raconte', img: 'raconte.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://raconte-reportage.com/index.html'},
 ]
 
 export default {
@@ -123,7 +126,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #projects {
   flex-direction: column;
   display: flex;
