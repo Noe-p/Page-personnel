@@ -40,31 +40,34 @@
     margin-top: 60px;
     width: 80vw;
     font-family: 'Sanchez';
-    font-size:1.5em;
+    font-size:1.2em;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 
     h2{
       color: black;
+      font-size: 1.4em;
     }
 
     .language, .framework{
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     .items{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 20%;
+      grid-column-gap: 50%;
       margin:10px;
+      width: auto;
 
       p{
         position: relative;
         display: flex;
         margin: 10px;
-        width: 10vw;
+        width: auto;
       }
 
       p:hover{
@@ -88,6 +91,7 @@
         transform: translate(-50%,-50%);
         transition: all 0.2s;
       }
+
 
       p:hover::before{
         background-color: teal;
@@ -120,11 +124,23 @@
       font-size: 5vw;
       margin-bottom:25px;
 
+      h2{
+        font-size: 6vw;
+      }
+
       .items{
         grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0;
+        margin:10px;
+        width: 70vw;
+        margin-left: 30px;
 
         p{
-          width: 30vw;
+          font-size: 4vw;
+        }
+
+        p::before{
+          font-size: 1.5em;
         }
 
         p:hover::before{

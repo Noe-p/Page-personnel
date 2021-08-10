@@ -19,7 +19,6 @@
       :url="project.url"
       v-bind:langs="project.langs"
       v-bind:framework="project.framework"
-      :projectsLength="projects.length"
     />
   </div>
 
