@@ -208,9 +208,31 @@ aside a:hover::before {
     margin-right: 30px;
   }
 
-  aside a:after,
   aside a:before {
-    display: none;
+    transform: translate(0,30px);
+  }
+
+  .navNoe a::after {
+    width: 30px;
+  }
+  .navNoe.open.underlign a::before {
+    transform: translate(-100%,30px);
+  }
+
+  .navAbout.open.underlign a::before,
+  .navProjects.open.underlign a::before {
+    transform: translate(-100%,30px);
+  }
+
+  aside a:hover::before {
+    transform: translate(0,30px);
+  }
+
+  .navNoe a:hover img:first-child {
+    left: 5px;
+  }
+  .navNoe a:hover img:last-child{
+    left: 0;
   }
 
   .menu {

@@ -21,7 +21,7 @@
         </a>
       </button>
       <button>
-        <a target='blank' href="../assets/CV_Noé_PHILIPPE.pdf">
+        <a target='blank' href="../../CV_Noé_PHILIPPE.pdf">
           <img src="../assets/logo/cv.png" alt="cv">
         </a>
       </button>
@@ -171,8 +171,9 @@ button:active {
   }
 
   button:hover {
-    padding: none;
-    border: none;
+    padding: 17px 16px 8px;
+    border: solid 0.3px black;
+    margin: 20px 21px 14px;
   }
 
 }

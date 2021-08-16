@@ -4,8 +4,6 @@
 
 <Header/>
 
-
-
 <article id="projects">
   <h1>Some projects...</h1>
   <Selection

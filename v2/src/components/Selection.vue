@@ -130,13 +130,13 @@
 
       .items{
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 0;
+        grid-column-gap: 25vw;
         margin:10px;
         width: 70vw;
-        margin-left: 30px;
 
         p{
           font-size: 4vw;
+          width: 90px;
         }
 
         p::before{
