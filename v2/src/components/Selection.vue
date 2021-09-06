@@ -109,8 +109,6 @@
   }
 
   .noSelection{
-    position: absolute;
-    margin-top: 40%;
     display: none;
     font-size: 30px;
   }

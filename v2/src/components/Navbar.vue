@@ -34,7 +34,7 @@ aside {
   z-index: 5;
   position: fixed;
   top: 0;
-  height: 10vh;
+  height: 65px;
   width: 100%;
   display: flex;
   align-items: center;
