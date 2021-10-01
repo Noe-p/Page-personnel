@@ -121,14 +121,14 @@ button {
   transition: all 0.2s;
   border: 0.3mm solid white;
   border-radius: 50%;
-  padding: 6px 7px 0;
-  margin: 20px 21px 14px;
+  padding: 11px 13px 0;
+  margin: 25px 26px 19px;
   background-color: white;
 }
 
 button:hover {
-  padding: 20px 21px 14px;
-  margin: 6px 7px 0;
+  padding: 25px 26px 19px;
+  margin: 11px 13px 0;
   border: 0.3mm solid rgb(28, 28, 28);
 }
 

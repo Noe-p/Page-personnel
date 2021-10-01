@@ -1,5 +1,5 @@
 <template  >
-
+<div class="home">
 <Navbar/>
 
 <Header/>
@@ -20,8 +20,6 @@
     />
   </div>
 
-
-
 </article>
 
 <About/>
@@ -30,6 +28,7 @@
   <a href="#top"><img src="../assets/logo/flecheTop.png" alt='flecheTop'></a>
 </footer>
 
+</div>
 </template>
 
 <script>
@@ -41,6 +40,7 @@ import Selection from './Selection.vue';
 
 const ressource = [
   { title: 'Focus', img: 'focus.png', langs: ['html', 'css', 'javaScript', 'php', 'sql'], framework: [], url: 'https://github.com/Noe-p/Developpement-application-web'},
+  { title: 'RPG', img: 'rpg.png', langs: ['java'], framework: [], url: 'https://github.com/Noe-p/RPG--LPW'},
   { title: 'Space Invaders', img: 'spaceInvaders.png', langs: ['python'], framework: [], url: 'https://github.com/Noe-p/Space-Invaders'},
   { title: 'Angular Todo App', img: 'angularTodoApp.png', langs: ['html', 'css', 'javaScript'], framework: ['angular'], url: 'https://github.com/Noe-p/angular-todo-app'},
   { title: 'Batz', img: 'batz.png', langs: ['html', 'css', 'javaScript'], framework: [], url: 'https://location-maison-iledebatz.fr/'},
@@ -123,6 +123,12 @@ export default {
 </script>
 
 <style lang="scss">
+.home{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #projects {
   flex-direction: column;
   display: flex;

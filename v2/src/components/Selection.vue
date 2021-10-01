@@ -1,4 +1,5 @@
 <template>
+<div>
   <div  class="selection">
     <div class="language">
       <h2>Languages</h2>
@@ -8,6 +9,7 @@
         <p class="sql" @click="editSelection('sql')" >SQL</p>
         <p class="php" @click="editSelection('php')" >PHP</p>
         <p class="python" @click="editSelection('python')" >Python</p>
+        <p class="java" @click="editSelection('java')" >Java</p>
       </div>
     </div>
     <div class="framework">
@@ -21,6 +23,7 @@
 
   <h3 class="noSelection">Sorry, neither project matches to your selection</h3>
 
+</div>
 </template>
 
 <script>
@@ -154,9 +157,8 @@
     .noSelection{
       position: relative;
       margin-top: 0;
-      display: none;
       font-size: 18px;
-      width: 80%;
+      width: 80vw;
     }
 
 
