@@ -1,8 +1,8 @@
 <template>
   <header id="top">
     <h1>Noé PHILIPPE</h1>
-    <h2>Web Developer<br>
-      <p>I am looking for a work-study contract</p>
+    <h2>Full Stack Developer<br>
+      <p>I am a full stack developer on a work-study contract with Bob the Developer</p>
     </h2>
     <div class="buttons">
       <button>
