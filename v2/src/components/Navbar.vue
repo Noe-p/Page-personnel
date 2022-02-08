@@ -41,6 +41,13 @@ aside {
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0);
   transition: all 0.2s;
+  animation-name: start;
+  animation-duration: 5s;
+}
+
+@keyframes start {
+  0%{opacity: 0}
+  100%{opacity: 1}
 }
 
 .navbar.open {

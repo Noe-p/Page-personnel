@@ -4,11 +4,13 @@
     <a target='blank' :href="[[ url ]]">
       <img :src="require(`@/assets/img/${img}`)" :alt='[[ title ]]'>
       <section  class="languages">
-        <div v-for="lang in langs" v-bind:key="lang">
+        <div class="logoContainer" v-for="lang in langs" v-bind:key="lang">
           <img :src="require(`@/assets/logo/${lang}.png`)" :alt='[[ lang ]]'>
+          <p class="description">{{lang}}</p>
         </div>
-        <div v-for="item in framework" v-bind:key="item">
+        <div class="logoContainer" v-for="item in framework" v-bind:key="item">
           <img class="framework" :src="require(`@/assets/logo/${item}.png`)" :alt='[[ item ]]'>
+          <p class="description">{{item}}</p>
         </div>
     </section>
     </a>
@@ -56,7 +58,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 110px;
   left: 50%;
   transform: translate(-50%,-130%);
   transition: all 0.5s;
@@ -64,17 +65,29 @@ h2 {
   position: absolute;
 }
 
+#projects a section .logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 #projects a section img {
   border-radius: none;
   box-shadow: none;
   width: 35px;
+  height: 35px;
   margin: 5px 10px 0;
 }
 
-#projects a section .framework {
-  margin-left: 60px;
+#projects a section .description {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
 }
-
 #projects a:hover section {
   transform: translate(-50%,0);
 }
@@ -107,6 +120,7 @@ h2 {
 
   #projects a section img {
     width: 20px;
+    height: 20px;
     margin: 0 5px;
   }
 
