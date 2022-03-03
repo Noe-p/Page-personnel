@@ -1,7 +1,8 @@
 <template>
 <div>
+  
   <div  class="selection">
-    <div class="language">
+    <div class="container">
       <h2>Languages</h2>
       <div  class="items">
         <p class="html" @click="editSelection('html')">HTML5/CSS</p>
@@ -12,12 +13,21 @@
         <p class="java" @click="editSelection('java')" >Java</p>
       </div>
     </div>
-    <div class="framework">
+    <div class="container">
       <h2>Frameworks</h2>
       <div class="items">
         <p class="angular" @click="editSelection('angular')">Angular</p>
         <p class="vue" @click="editSelection('vue')">Vue.js</p>
         <p class="react" @click="editSelection('react')">React</p>
+      </div>
+    </div>
+  </div>
+  <div class="typeProject">
+    <div class="container">
+      <h2>Project Type</h2>
+      <div class="items">
+        <p class="study" @click="editSelection('study')">Study</p>
+        <p class="perso" @click="editSelection('perso')">Personal</p>
       </div>
     </div>
   </div>
@@ -40,7 +50,7 @@
 </script>
 
 <style lang="scss">
-  .selection{
+  .selection, .typeProject{
     margin-top: 60px;
     width: 80vw;
     font-family: 'Sanchez';
@@ -49,12 +59,15 @@
     justify-content: space-around;
     flex-wrap: wrap;
 
+
+
     h2{
       color: black;
       font-size: 1.4em;
+      margin-bottom: 20px;
     }
 
-    .language, .framework{
+    .container{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,12 +77,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 50%;
-      margin:10px;
-      width: auto;
 
       p{
         position: relative;
         display: flex;
+        align-items: center;
         margin: 10px;
         width: auto;
       }
@@ -97,10 +109,6 @@
       }
 
 
-      p:hover::before{
-        background-color: teal;
-      }
-
       p:active::before{
         width: 25px;
         height: 25px;
@@ -110,6 +118,9 @@
         background-color: teal;
       }
     }
+  }
+  .typeProject{
+    margin-top: 10px;
   }
 
   .noSelection{
@@ -122,9 +133,8 @@
   }
 
   @media all and (max-device-width:480px) {
-    .selection{
+    .selection, .typeProject{
       font-size: 5vw;
-      margin-bottom:25px;
 
       h2{
         font-size: 6vw;

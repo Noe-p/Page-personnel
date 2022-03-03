@@ -4,6 +4,7 @@ export const ressource = [
     img: 'focus.png',
     langs: ['html', 'css', 'javaScript', 'php', 'sql'],
     framework: [],
+    type: ['study'],
     url: 'https://github.com/Noe-p/Developpement-application-web',
   },
 
@@ -12,6 +13,7 @@ export const ressource = [
     img: 'spaceInvaders.png',
     langs: ['python'],
     framework: [],
+    type: ['study'],
     url: 'https://github.com/Noe-p/Space-Invaders',
   },
   {
@@ -19,20 +21,16 @@ export const ressource = [
     img: 'angularTodoApp.png',
     langs: ['html', 'css', 'javaScript'],
     framework: ['angular'],
+    type: ['perso'],
     url: 'https://github.com/Noe-p/angular-todo-app',
   },
-  {
-    title: 'Batz',
-    img: 'batz.png',
-    langs: ['html', 'css', 'javaScript'],
-    framework: [],
-    url: 'https://location-maison-iledebatz.fr/',
-  },
+
   {
     title: 'Todo List',
     img: 'todoApp.png',
     langs: ['html', 'css', 'javaScript'],
     framework: ['vue'],
+    type: ['perso'],
     url: 'https://github.com/Noe-p/todo-list',
   },
   {
@@ -40,13 +38,23 @@ export const ressource = [
     img: 'raconte.png',
     langs: ['html', 'css', 'javaScript'],
     framework: [],
+    type: ['perso'],
     url: 'https://raconte-reportage.com/index.html',
+  },
+  {
+    title: 'Batz',
+    img: 'batz.png',
+    langs: ['html', 'css', 'javaScript'],
+    framework: [],
+    type: ['perso'],
+    url: 'https://location-maison-iledebatz.fr/',
   },
   {
     title: 'RPG',
     img: 'rpg.png',
     langs: ['java'],
     framework: [],
+    type: ['study'],
     url: 'https://github.com/Noe-p/RPG--LPW',
   },
   {
@@ -54,6 +62,7 @@ export const ressource = [
     img: 'pomodoro.png',
     langs: ['html', 'css', 'javaScript'],
     framework: ['react'],
+    type: ['study'],
     url: 'https://pomodoro-lpw.vercel.app',
   },
 ];

@@ -97,6 +97,11 @@ export default {
               flag = flag + 1;
             }
           }
+          for(let type in ressource[project].type){
+            if(ressource[project].type[type]==this.selection[lang]){
+              flag = flag + 1;
+            }
+          }
         }
         if(flag == this.selection.length){
           this.projects.unshift(ressource[project]);
