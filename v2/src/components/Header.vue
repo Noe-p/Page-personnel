@@ -21,7 +21,7 @@
         </a>
       </button>
       <button>
-        <a target='blank' href="../../CV_Noé_PHILIPPE.pdf">
+        <a target='blank' href="/CV_Noé_PHILIPPE.pdf">
           <img src="../assets/logo/cv.png" alt="cv">
         </a>
       </button>

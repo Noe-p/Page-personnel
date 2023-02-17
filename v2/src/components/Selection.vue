@@ -19,6 +19,7 @@
         <p class="angular" @click="editSelection('angular')">Angular</p>
         <p class="vue" @click="editSelection('vue')">Vue.js</p>
         <p class="react" @click="editSelection('react')">React</p>
+        <p class="reactNative" @click="editSelection('reactNative')">React Native</p>
       </div>
     </div>
   </div>

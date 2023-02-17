@@ -65,4 +65,12 @@ export const ressource = [
     type: ['study'],
     url: 'https://pomodoro-lpw.vercel.app',
   },
+  {
+    title: 'SoundBoard',
+    img: 'soundboard.png',
+    langs: ['html', 'css', 'javaScript'],
+    framework: ['reactNative'],
+    type: ['study'],
+    url: 'https://soundboard-flame.vercel.app/',
+  },
 ];
